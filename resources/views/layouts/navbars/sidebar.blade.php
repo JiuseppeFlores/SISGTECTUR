@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="orange" data-background-color="white" data-image="{{ asset('material') }}/img/sidebar-1.jpg">
+<div class="sidebar" data-color="azure" data-background-color="white" data-image="{{ asset('material') }}/img/sidebar-1.jpg">
   <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -6,7 +6,7 @@
   -->
   <div class="logo">
     <a href="https://creative-tim.com/" class="simple-text logo-normal">
-      {{ __('Creative Tim') }}
+      {{ __('SISGTECTUR') }}
     </a>
   </div>
   <div class="sidebar-wrapper">
@@ -14,46 +14,52 @@
       <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('home') }}">
           <i class="material-icons">dashboard</i>
-            <p>{{ __('Dashboard') }}</p>
+            <p>{{ __('Panel Inicial') }}</p>
         </a>
       </li>
-      <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
-        <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
-          <i><img style="width:25px" src="{{ asset('/img/laravel.svg') }}"></i>
-          <p>{{ __('Laravel Examples') }}
+      <li class="nav-item {{ ($activePage == 'users' || $activePage == 'user-admin') ? ' active' : '' }}">
+        <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="false">
+          <i class="material-icons">account_circle</i>
+          <p>{{ __('Usuarios') }}
             <b class="caret"></b>
           </p>
         </a>
         <div class="collapse show" id="laravelExample">
           <ul class="nav">
-            <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
-              <a class="nav-link" href="#">
-                <span class="sidebar-mini"> UP </span>
-                <span class="sidebar-normal">{{ __('User profile') }} </span>
+            <li class="nav-item{{ $activePage == 'users' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('users.index') }}">
+              <i class="material-icons">manage_accounts</i>
+                <span class="sidebar-normal">{{ __('Administradores') }} </span>
               </a>
             </li>
-            <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
+            <li class="nav-item{{ $activePage == 'user-manager' ? ' active' : '' }}">
               <a class="nav-link" href="#">
-                <span class="sidebar-mini"> UM </span>
-                <span class="sidebar-normal"> {{ __('User Management') }} </span>
+                <i class="material-icons">account_box</i>
+                <span class="sidebar-normal"> {{ __('Gerentes') }} </span>
+              </a>
+            </li>
+            <li class="nav-item{{ $activePage == 'user-client' ? ' active' : '' }}">
+              <a class="nav-link" href="#">
+                <i class="material-icons">perm_identity</i>
+                <span class="sidebar-normal"> {{ __('Clientes') }} </span>
               </a>
             </li>
           </ul>
         </div>
       </li>
-      <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
+      <li class="nav-item{{ $activePage == 'publish' ? ' active' : '' }}">
         <a class="nav-link" href="#">
           <i class="material-icons">content_paste</i>
-            <p>{{ __('Table List') }}</p>
+            <p>Negocios</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'typography' ? ' active' : '' }}">
         <a class="nav-link" href="#">
           <i class="material-icons">library_books</i>
-            <p>{{ __('Typography') }}</p>
+            <p>{{ __('Publicaciones') }}</p>
         </a>
       </li>
-      <li class="nav-item{{ $activePage == 'icons' ? ' active' : '' }}">
+      <!-- <li class="nav-item{{ $activePage == 'icons' ? ' active' : '' }}">
         <a class="nav-link" href="#">
           <i class="material-icons">bubble_chart</i>
           <p>{{ __('Icons') }}</p>
@@ -76,13 +82,7 @@
           <i class="material-icons">language</i>
           <p>{{ __('RTL Support') }}</p>
         </a>
-      </li>
-      <li class="nav-item active-pro{{ $activePage == 'upgrade' ? ' active' : '' }}">
-        <a class="nav-link text-white bg-danger" href="#">
-          <i class="material-icons text-white">unarchive</i>
-          <p>{{ __('Upgrade to PRO') }}</p>
-        </a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </div>

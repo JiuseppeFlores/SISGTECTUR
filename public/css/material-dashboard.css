@@ -2044,14 +2044,14 @@ pre code {
 }
 
 .table .thead-dark th {
-  color: #fafafa;
-  background-color: #212529;
-  border-color: #32383e;
+  color: #fff;
+  background-color: #2196F3;
+  border-color: #fff;
 }
 
 .table .thead-light th {
-  color: #495057;
-  background-color: #e9ecef;
+  color: #000;
+  background-color: #778df1;
   border-color: rgba(0, 0, 0, 0.06);
 }
 
@@ -16251,8 +16251,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .table thead th {
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 400;
   border-top-width: 0;
   border-bottom-width: 1px;
 }
