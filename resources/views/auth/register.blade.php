@@ -11,7 +11,7 @@
             <h4 class="card-title"><strong>{{ __('Registrate') }}</strong></h4>
           </div>
           <div class="card-body">
-            <div class="bmd-form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+            <!-- <div class="bmd-form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
@@ -25,7 +25,7 @@
                   <strong>{{ $errors->first('name') }}</strong>
                 </div>
               @endif
-            </div>
+            </div> -->
             <!-- Username -->
             <div class="bmd-form-group{{ $errors->has('username') ? ' has-danger' : '' }} mt-3">
               <div class="input-group">

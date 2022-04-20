@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\UserCreateRequest;
+use App\Http\Requests\UserPasswordRequest;
 use App\Http\Requests\UserEditRequest;
 use App\Models\User;
 
 class UserController extends Controller
 {
     public function index(){
-        $users = User::orderBy('id','ASC')->paginate(5);
+        $users = User::orderBy('created_at','DESC')->paginate(6);
         return view('users.index', compact('users'));
     }
 
@@ -33,14 +35,48 @@ class UserController extends Controller
         return view('users.edit', compact('user'));
     }
 
-    public function update(UserEditRequest $request, User $user){
+    public function update(Request $request, User $user, $type){
         /*$user = User::findOrfail($id);*/
-        $data = $request->only('name','username','email');
-        $password = $request->input('password');
-         if($password)
-            $data['password']=bcrypt($password);
+        if($type){
+            $request->validate([
+                'name' => ['required', 'min:6', 'max:255'],
+                'username' => [
+                    'required', 'min:6', 'max:20', 'unique:users,username,' . request()->route('user')->id
+                ],
+                'email' => [
+                    'required', 'email', 'unique:users,email,' . request()->route('user')->id,
+                ]
+            ]);
+            $data = $request->only('username','email');
+            $user->update($data);
+            return redirect()->route('users.show', $user->id)
+                            ->with('success', 'Usuario actualizado correctamente');
+        }else{
+            $request->validate([
+                'password' => [
+                    'required', 'min:6', 'max:255', 'confirmed'
+                ]
+            ]);
+            $data['password'] = Hash::make($request->input('password'));
+            $user->update($data);
+        }
+    }
+
+    public function password(Request $request, User $user){
+
+        if(password_verify($request->password, $user->password)){
+            $password = $request->only('password');
+            $data['password'] = bcrypt($password);
+            $user->update($data);
+            return redirect()->route('users.show', $user->id)->with('success', 'Contraseña actualizada correctamente');
+        }else{
+            return redirect()->route('users.show', $user->id)->with('success', 'Contraseña Incorrecta'); 
+        }
+     
+        $data = $request->only('password');
+        $data['password'] = bcrypt($request->password);
         $user->update($data);
-        return redirect()->route('users.show', $user->id)->with('success', 'Usuario actualizado correctamente');
+        return redirect()->route('users.show', $user->id)->with('success', 'Contraseña actualizada correctamente');
     }
 
     public function destroy(User $user){

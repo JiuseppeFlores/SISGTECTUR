@@ -4,7 +4,7 @@
 <div class="container" style="height: auto;">
   <div class="row align-items-center">
     <div class="col-md-9 ml-auto mr-auto mb-3 text-center">
-      <h3>{{ __('Acercate a Servicios Turisticos y vive la experiencia Turística a través de un Ecosistema Digital') }} </h3>
+      <h3>{{ __('Vive la una experiencia Turística a través de un Ecosistema Digital') }} </h3>
     </div>
     <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
       <form class="form" method="POST" action="{{ route('login') }}">
@@ -28,7 +28,7 @@
             -->
           </div>
           <div class="card-body">
-            <p class="card-description text-center">{{ __('Ingrese su correo: ') }} <strong>ejemplo@dominio.com</strong> {{ __(' y su ') }}<strong>Contraseña</strong> </p>
+            <!-- <p class="card-description text-center">{{ __('Ingrese su correo: ') }} <strong>ejemplo@dominio.com</strong> {{ __(' y su ') }}<strong>Contraseña</strong> </p> -->
             <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -81,11 +81,11 @@
                 </a>
             @endif
         </div>
-        <div class="col-6 text-right">
+        <!-- <div class="col-6 text-right">
             <a href="{{ route('register') }}" class="text-light">
                 <small>{{ __('Crear Nueva Cuenta') }}</small>
             </a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

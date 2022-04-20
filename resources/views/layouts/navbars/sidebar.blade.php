@@ -17,7 +17,7 @@
             <p>{{ __('Panel Inicial') }}</p>
         </a>
       </li>
-      <li class="nav-item {{ ($activePage == 'users' || $activePage == 'user-admin') ? ' active' : '' }}">
+      <!-- <li class="nav-item {{ ($activePage == 'users' || $activePage == 'user-admin') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="false">
           <i class="material-icons">account_circle</i>
           <p>{{ __('Usuarios') }}
@@ -46,17 +46,29 @@
             </li>
           </ul>
         </div>
+      </li> -->
+      <li class="nav-item{{ $activePage == 'users' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('users.index') }}">
+          <i class="material-icons">account_circle</i>
+            <p>Usuarios</p>
+        </a>
       </li>
-      <li class="nav-item{{ $activePage == 'publish' ? ' active' : '' }}">
-        <a class="nav-link" href="#">
-          <i class="material-icons">content_paste</i>
+      <li class="nav-item{{ $activePage == 'negocios' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('negocios.index') }}">
+          <i class="material-icons">work</i>
             <p>Negocios</p>
         </a>
       </li>
-      <li class="nav-item{{ $activePage == 'typography' ? ' active' : '' }}">
-        <a class="nav-link" href="#">
+      <li class="nav-item{{ $activePage == 'publicaciones' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('publicaciones.index') }}">
           <i class="material-icons">library_books</i>
-            <p>{{ __('Publicaciones') }}</p>
+            <p>Publicaciones</p>
+        </a>
+      </li>
+      <li class="nav-item{{ $activePage == 'Inicio Cliente' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('cliente.inicio') }}">
+          <i class="material-icons">face</i>
+            <p>Cliente</p>
         </a>
       </li>
       <!-- <li class="nav-item{{ $activePage == 'icons' ? ' active' : '' }}">

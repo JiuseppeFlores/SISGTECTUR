@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class TipoNegocio extends Model
 {
     use HasFactory;
+    protected $table = 'business_types';
+    protected $primaryKey = 'id';
+    public $timestamps = false;
+    protected $fillable = [
+        'name',
+        'description',
+    ];
 }

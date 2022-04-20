@@ -9,12 +9,12 @@ class Publicacion extends Model
 {
     use HasFactory;
 
+    protected $table = 'publication';
+    protected $primaryKey = 'id';
+    public $timestamps = false;
     protected $fillable = [
-        'id_negocio',
-        'titulo_pub',
-        'descripcion_pub',
-        'fecha_pub',
-        'imagen_pub',
-        'id_admin_hab',
+        'title',
+        'description',
+        'business_id',
     ];
 }

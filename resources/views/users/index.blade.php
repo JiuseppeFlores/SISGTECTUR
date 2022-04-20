@@ -1,4 +1,4 @@
-@extends('layouts.main', ['activePage' => 'users', 'titlePage' => 'Usuarios'])
+@extends('layouts.main', ['activePage' => 'users', 'titlePage' => 'Administración'])
 @section('content')
     <div class="content">
         <div class="container-fluid">
@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
-                                <div class="card-header card-header-primary">
+                                <div class="card-header card-header-info">
                                     <h4 class="card-title">Usuarios</h4>
                                     <p class="card-category">Lista de Usuarios Registrados</p>
                                 </div>
@@ -27,21 +27,19 @@
                                     </div>
                                     <div class="table-responsive">
                                         <table class="table table-hover">
-                                            <thead class="thead-dark">
-                                                <th>ID</th>
-                                                <th>NOMBRE</th>
-                                                <th>CORREO</th>
-                                                <th>USUARIO</th>
-                                                <th>CREADO</th>
-                                                <th class="text-right">ACCIONES</th>
+                                            <thead class="text-info">
+                                                <th><strong>ID</strong></th>
+                                               <th><strong>USUARIO</strong></th> 
+                                               <th><strong>CORREO</strong></th>
+                                                <th><strong>CREADO</strong></th>
+                                                <th class="text-right"><strong>ACCIONES</strong></th>
                                             </thead>
                                             <tbody>
                                                 @foreach ($users as $user)
                                                 <tr>
                                                     <td>{{$user->id}}</td>
-                                                    <td>{{$user->name}}</td>
-                                                    <td>{{$user->email}}</td>
                                                     <td>{{$user->username}}</td>
+                                                    <td>{{$user->email}}</td>
                                                     <td>{{$user->created_at}}</td>
                                                     <td class="td-actions text-right">
                                                         <a href="{{ route('users.show', $user->id) }}" class="btn btn-info">
@@ -64,7 +62,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="card-footer ml-auto">
+                                <div class="card-footer m-auto">
                                     {{ $users->links() }}
                                 </div>
                             </div>

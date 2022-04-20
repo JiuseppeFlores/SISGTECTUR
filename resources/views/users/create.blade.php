@@ -1,4 +1,4 @@
-@extends('layouts.main', ['activePage'=>'users', 'titlePage'=>'Nuevo Usuario']);
+@extends('layouts.main', ['activePage'=>'users', 'titlePage'=>'Crear Nuevo Usuario']);
 @section('content')
     <div class="content">
         <div class="container-fluid">
@@ -7,12 +7,12 @@
                     <form action="{{ route('users.store') }}" method="post" class="form-horizontal">
                         @csrf
                         <div class="card">
-                            <div class="card-header card-header-primary">
+                            <div class="card-header card-header-info">
                                 <h4 class="card-title">Usuario</h4>
                                 <p>Ingresar datos del Usuario</p>
                             </div>
                             <div class="card-body">
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="bmd-form-group{{ $errors->has('name') ? ' has-danger' : '' }} col-sm-10">
                                         <div class="input-group">
                                             <label for="name" class="col-sm-2 col-form-label">Nombre</label>
@@ -26,7 +26,7 @@
                                             </div>
                                         @endif
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="row">
                                     <div class="bmd-form-group{{ $errors->has('username') ? ' has-danger' : '' }} col-sm-10">
                                         <div class="input-group">

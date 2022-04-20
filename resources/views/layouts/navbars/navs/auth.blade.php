@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
   <div class="container-fluid">
     <div class="navbar-wrapper">
-      <a class="navbar-brand" href="#">{{ $titlePage }}</a>
+      <div class="navbar-brand"><h3><strong>{{ $titlePage }}</strong></h3></div>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
     <span class="sr-only">Toggle navigation</span>
@@ -21,6 +21,9 @@
         </div>
       </form> -->
       <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="{{ route('cliente.inicio') }}" class="btn btn-danger">Ver Modo Cliente</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('home') }}">
             <i class="material-icons">dashboard</i>

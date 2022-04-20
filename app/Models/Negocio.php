@@ -8,20 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Negocio extends Model
 {
     use HasFactory;
-    protected $table = 'negocio';
-    protected $primaryKey = 'id_negocio';
+    protected $table = 'business';
+    protected $primaryKey = 'id';
     public $timestamps = false;
     protected $fillable = [
-        'id_gerente',
-        'nombre_negocio',
-        'descripcion_negocio',
+        'name',
+        'description',
         'nit',
-        'email_negocio',
-        'telefono',
-        'celular',
-        'logotipo',
-        'id_tipo_negocio',
-        'id_ubicacion',
-        'id_user_validate',
+        'email',
+        'phone',
+        'cellphone',
+        'logo',
+        'business_type_id',
+        'location_id',
+        'super_user_validate_id',
+        'state',
     ];
 }
