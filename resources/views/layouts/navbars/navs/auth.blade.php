@@ -22,7 +22,7 @@
       </form> -->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="{{ route('cliente.inicio') }}" class="btn btn-danger">Ver Modo Cliente</a>
+          <a href="{{ route('cliente.inicio') }}" class="btn btn-facebook">Ver Modo Cliente</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('home') }}">

@@ -12,6 +12,7 @@ class Negocio extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
     protected $fillable = [
+        'id',
         'name',
         'description',
         'nit',
@@ -23,5 +24,6 @@ class Negocio extends Model
         'location_id',
         'super_user_validate_id',
         'state',
+        'manager_id',
     ];
 }

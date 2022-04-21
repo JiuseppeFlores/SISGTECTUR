@@ -13,6 +13,6 @@ class TipoNegocio extends Model
     public $timestamps = false;
     protected $fillable = [
         'name',
-        'description',
+        'description', 
     ];
 }

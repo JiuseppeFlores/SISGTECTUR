@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 /*Auth::routes();*/
@@ -47,8 +47,8 @@ Route::delete('/users/{user}', [App\Http\Controllers\UserController::class, 'des
  Route::put('/negocios/{negocio}', [App\Http\Controllers\NegocioController::class, 'update'])->name('negocios.update');
  Route::delete('/negocios/{negocio}', [App\Http\Controllers\NegocioController::class, 'destroy'])->name('negocios.delete');
 /* RUTAS PERSONALIZADAS PUBLICAIONES */
-Route::get('/publicaciones/create', [App\Http\Controllers\PublicacionController::class,'create'])->name('publicaciones.create');
-Route::post('/publicaciones', [App\Http\Controllers\PublicacionController::class,'store'])->name('publicaciones.store');
+Route::get('/publicaciones/create/{negocio}', [App\Http\Controllers\PublicacionController::class,'create'])->name('publicaciones.create');
+Route::post('/publicaciones/{negocio}', [App\Http\Controllers\PublicacionController::class,'store'])->name('publicaciones.store');
 Route::get('/publicaciones', [App\Http\Controllers\PublicacionController::class, 'index'])->name('publicaciones.index');
 Route::get('/publicaciones/{publicacion}', [App\Http\Controllers\PublicacionController::class, 'show'])->name('publicaciones.show');
 Route::get('/publicaciones/{publicacion}/edit', [App\Http\Controllers\PublicacionController::class, 'edit'])->name('publicaciones.edit');
@@ -64,3 +64,6 @@ Route::get('/transporte', [App\Http\Controllers\ClienteController::class, 'trans
 Route::get('/gastronomia', [App\Http\Controllers\ClienteController::class, 'gastronomia'])->name('cliente.gastronomia');
 Route::get('/atraccion', [App\Http\Controllers\ClienteController::class, 'atraccion'])->name('cliente.atraccion');
 Route::get('/servicio/transporte', [App\Http\Controllers\ClienteController::class, 'show_transporte'])->name('cliente.servicio.transporte');
+
+Route::get('/perfil', [App\Http\Controllers\ClienteController::class, 'perfil'])->name('cliente.perfil');   
+Route::get('/reservas', [App\Http\Controllers\ClienteController::class, 'reservas'])->name('cliente.reservas');

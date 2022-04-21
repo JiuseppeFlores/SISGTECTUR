@@ -22,7 +22,16 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
+    {   
+        if(auth()->user()->user_type == "1"){
+            return view('home');
+        }else{
+            if(auth()->user()->user_type == "3"){
+                return view('cliente.home');
+            }else{
+                return view('home');
+            }   
+        }
+        
     }
 }
